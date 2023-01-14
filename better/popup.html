@@ -1,0 +1,180 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="popup.css">
+    </head>
+
+    <body>
+        <div id="main">
+            <div class="content">
+                <div class="settings_group">
+                    <div id="manage" class="clickable">Manage Subscription</div>
+                </div>
+
+                <div id="ipbanned_warning" class="warning_box hidden">
+                    <div>Your IP is illegible for free credits.</div>
+                    <div><a href="https://nopecha.com/pricing" target="_blank">Purchase a key</a> to use with VPN/proxy.</div>
+                </div>
+
+                <div class="settings_group">
+                    <div class="label">Key</div>
+                    <input id="key" type="text" class="value" placeholder="Optional" style="width: 280px;">
+                </div>
+
+                <div class="settings_group">
+                    <div class="label">Plan</div>
+                    <div id="plan" class="value green">
+                        <div class="loading"><div></div><div></div><div></div><div></div></div>
+                    </div>
+                </div>
+
+                <div class="settings_group">
+                    <div class="label">Credits</div>
+                    <div id="credit" class="value">
+                        <div class="loading"><div></div><div></div><div></div><div></div></div>
+                    </div>
+                </div>
+
+                <div class="settings_group">
+                    <div class="label">Refills</div>
+                    <div id="refills" class="value green">
+                        <div class="loading"><div></div><div></div><div></div><div></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vspace"></div>
+
+            <div class="tab_btn_row">
+                <div class="tab_btn active" data-target="#hcaptcha_tab">hCaptcha</div>
+                <div class="tab_btn" data-target="#recaptcha_tab">reCAPTCHA</div>
+                <div class="tab_btn" data-target="#funcaptcha_tab">FunCAPTCHA</div>
+                <div class="tab_btn" data-target="#ocr_tab">OCR</div>
+            </div>
+
+            <div class="tab_content bordered">
+
+                <div id="hcaptcha_tab" class="tab">
+                    <div class="settings_group">
+                        <div class="label">Auto Open</div>
+                        <label class="switch">
+                            <input id="hcaptcha_auto_open" type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="settings_group">
+                        <div class="label">Auto Solve</div>
+                        <label class="switch">
+                            <input id="hcaptcha_auto_solve" type="checkbox" data-disables="hcaptcha_solve_delay">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="settings_group">
+                        <div class="label">Solve Delay <span class="light">(ms)</span></div>
+                        <input id="hcaptcha_solve_delay" type="text" class="number">
+                    </div>
+                </div>
+
+                <div id="recaptcha_tab" class="tab hidden">
+                    <div class="settings_group">
+                        <div class="label">Auto Open</div>
+                        <label class="switch">
+                            <input id="recaptcha_auto_open" type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="settings_group">
+                        <div class="label">Auto Solve</div>
+                        <label class="switch">
+                            <input id="recaptcha_auto_solve" type="checkbox" data-disables="recaptcha_solve_delay,recaptcha_solve_method">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="settings_group">
+                        <div class="label">Solve Delay <span class="light">(ms)</span></div>
+                        <input id="recaptcha_solve_delay" type="text" class="number">
+                    </div>
+
+                    <div class="settings_group">
+                        <div class="label">ReCAPTCHA Method</div>
+                        <select id="recaptcha_solve_method">
+                            <option value="image" selected>Image</option>
+                            <option value="voice">Voice</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="funcaptcha_tab" class="tab hidden">
+                    <div class="settings_group">
+                        <div class="label">Auto Open</div>
+                        <label class="switch">
+                            <input id="funcaptcha_auto_open" type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="settings_group">
+                        <div class="label">Auto Solve</div>
+                        <label class="switch">
+                            <input id="funcaptcha_auto_solve" type="checkbox" data-disables="funcaptcha_solve_delay">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="settings_group">
+                        <div class="label">Solve Delay <span class="light">(ms)</span></div>
+                        <input id="funcaptcha_solve_delay" type="text" class="number">
+                    </div>
+
+                    <div class="settings_group">
+                        <div class="label" style="text-align: center; opacity: 0.2;">This feature is in beta</div>
+                    </div>
+                </div>
+
+                <div id="ocr_tab" class="tab hidden">
+                    <div class="settings_group">
+                        <div class="label">Auto Solve</div>
+                        <label class="switch">
+                            <input id="ocr_auto_solve" type="checkbox" data-disables="ocr_image_selector,ocr_input_selector">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="settings_group">
+                        <div class="label">Image Selector</div>
+                        <input id="ocr_image_selector" type="text" class="text" placeholder='CSS Selector'>
+                    </div>
+
+                    <div class="settings_group">
+                        <div class="label">Input Selector</div>
+                        <input id="ocr_input_selector" type="text" class="text" placeholder='CSS Selector'>
+                    </div>
+
+                    <div class="settings_group">
+                        <div class="label" style="text-align: center; opacity: 0.2;">This feature is in beta</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- <div class="settings_group footer_group">
+                <div class="label">Debug</div>
+                <label class="switch">
+                    <input id="debug" type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div> -->
+
+            <div class="settings_group footer_group">
+                <div id="footer" class="clickable">Join us on Discord for free credits!</div>
+            </div>
+        </div>
+
+        <script src="utils.js"></script>
+        <script src="content.js"></script>
+        <script src="popup.js"></script>
+    </body>
+</html>
