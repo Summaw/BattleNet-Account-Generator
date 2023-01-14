@@ -1,0 +1,37 @@
+{
+  "name": "battle-net",
+  "version": "1.0.0",
+  "description": "Automated script for gracefully creating accounts on battle.net using puppeteer!",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Summaw",
+  "license": "ISC",
+  "dependencies": {
+    "cli-color": "^2.0.3",
+    "fs": "^0.0.1-security",
+    "gradient-string": "^2.0.2",
+    "node-bash-title": "^0.0.2",
+    "puppeteer-extra": "^3.3.4",
+    "puppeteer-extra-plugin-stealth": "^2.11.1",
+    "random-name": "^0.1.2",
+    "secure-random-password": "^0.2.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Summaw/BattleNet-Account-Generator.git"
+  },
+  "keywords": [
+    "Puppeteer",
+    "Automation",
+    "Battle.net",
+    "Battle.Net",
+    "Generator"
+  ],
+  "bugs": {
+    "url": "https://github.com/Summaw/BattleNet-Account-Generator/issues"
+  },
+  "homepage": "https://github.com/Summaw/BattleNet-Account-Generator#readme"
+}
