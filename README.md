@@ -13,6 +13,8 @@ Installation
 
 [+] Make sure to fill in the config.json with needed info.
 
+[+] For TempMailFuck you must create a file named "node_modules" and move the other folders inside of the TempMailFuck folder to the new folder you created. You will then open a cmd from inside of the `node_modules` folder you created and type `npm install puppeteer` from there you should be able to run the main program.
+
 Preview:
 
 ![image](https://user-images.githubusercontent.com/98126132/212495915-b08db573-3b26-4452-87d4-69c8b2c7b108.png)
